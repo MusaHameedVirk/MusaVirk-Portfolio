@@ -1,370 +1,567 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Musa Hameed — Portfolio</title>
-<meta name="description" content="Portfolio of Musa Hameed, student.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  /* ---------- Design tokens ---------- */
-  :root{
-    --ink:        #1B2A4A;   /* primary text / headings */
-    --paper:      #F7F5F0;   /* page background */
-    --card:       #FFFFFF;   /* card background */
-    --line:       #DDD8CC;   /* rule / border colour */
-    --slate:      #5B6472;   /* secondary text */
-    --gold:       #B4890B;   /* accent — used sparingly */
-    --gold-soft:  #F1E6C6;   /* accent background */
-    --focus:      #1B2A4A;
+  <title>Musa Hameed — Portfolio</title>
 
-    --font-display: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
-    --font-body:    'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
-    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+<meta
+name="description"
+content="Portfolio of Musa Hameed, student and aspiring software engineer interested in computer science, AI, and technology."
 
-    --max-w: 46rem;
-  }
+>
 
-  @font-face{
-    font-family:'Fraunces';
-    src: local('Fraunces');
-    font-display: swap;
-  }
+  <style>
+    /* ---------- Design tokens ---------- */
 
-  *,*::before,*::after{ box-sizing: border-box; }
+    :root {
+      --ink: #1B2A4A;
+      --paper: #F7F5F0;
+      --card: #FFFFFF;
+      --line: #DDD8CC;
+      --slate: #5B6472;
+      --gold: #B4890B;
+      --gold-soft: #F1E6C6;
+      --focus: #1B2A4A;
 
-  html{ scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    *,*::before,*::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-  }
+      --font-display: "Fraunces", "Iowan Old Style", "Georgia", serif;
+      --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "Courier New", monospace;
 
-  body{
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
+      --max-w: 46rem;
+    }
 
-  /* Faint ruled-paper texture, purely decorative */
-  body{
-    background-image:
-      linear-gradient(var(--paper), var(--paper)),
-      repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 2.2rem,
-        rgba(27,42,74,0.035) 2.2rem,
-        rgba(27,42,74,0.035) calc(2.2rem + 1px)
-      );
-  }
+    /* ---------- Base ---------- */
 
-  img{ max-width: 100%; display: block; }
+    * {
+      box-sizing: border-box;
+    }
 
-  a{ color: var(--ink); }
-  a:not(.btn){
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ---------- Accessibility helpers ---------- */
-  .skip-link{
-    position: absolute;
-    left: -999px;
-    top: auto;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 0.75rem 1.25rem;
-    z-index: 100;
-    border-radius: 0 0 6px 0;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-  }
-  .skip-link:focus{
-    left: 0;
-    top: 0;
-  }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
 
-  :focus-visible{
-    outline: 3px solid var(--focus);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+      background-image:
+        linear-gradient(var(--paper), var(--paper)),
+        repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 2.2rem,
+          rgba(27, 42, 74, 0.035) 2.2rem,
+          rgba(27, 42, 74, 0.035) calc(2.2rem + 1px)
+        );
+    }
 
-  .sr-only{
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
+    /* ---------- Accessibility ---------- */
 
-  /* ---------- Layout shell ---------- */
-  .wrap{
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.75rem 1.25rem;
+      z-index: 100;
+      border-radius: 0 0 6px 0;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
 
-  /* ---------- Header / "ID card" ---------- */
-  header.site-header{
-    padding: 3.5rem 0 2.5rem;
-    border-bottom: 2px solid var(--ink);
-  }
+    .skip-link:focus {
+      left: 0;
+      top: 0;
+    }
 
-  .id-tag{
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-    background: var(--gold-soft);
-    padding: 0.25rem 0.6rem;
-    border-radius: 3px;
-    margin-bottom: 1rem;
-  }
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
 
-  h1.name{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    line-height: 1.05;
-    margin: 0 0 0.6rem;
-    letter-spacing: -0.01em;
-  }
+    /* ---------- Links ---------- */
 
-  p.identity{
-    font-family: var(--font-body);
-    font-size: 1.15rem;
-    color: var(--slate);
-    margin: 0;
-    max-width: 34rem;
-  }
+    a {
+      color: var(--ink);
+    }
 
-  /* ---------- Section framing ---------- */
-  section{
-    padding: 3rem 0;
-    border-bottom: 1px solid var(--line);
-  }
-  section:last-of-type{ border-bottom: none; }
+    a:not(.btn) {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
 
-  .section-label{
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--slate);
-    margin: 0 0 0.9rem;
-  }
+    /* ---------- Layout ---------- */
 
-  h2{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.7rem;
-    margin: 0 0 1rem;
-    color: var(--ink);
-  }
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-  .lede{
-    max-width: 40rem;
-  }
+    /* ---------- Header ---------- */
 
-  /* ---------- About ---------- */
-  #about p{ margin: 0 0 1rem; color: var(--ink); }
-  #about p:last-child{ margin-bottom: 0; }
+    header.site-header {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 2px solid var(--ink);
+    }
 
-  /* ---------- Projects / achievements ---------- */
-  .entry-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 1.5rem;
-  }
+    .id-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-soft);
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+    }
 
-  .entry{
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--ink);
-    border-radius: 4px;
-    padding: 1.25rem 1.4rem;
-  }
+    h1.name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      margin: 0 0 0.6rem;
+      letter-spacing: -0.01em;
+    }
 
-  .entry h3{
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0 0 0.4rem;
-  }
+    p.identity {
+      font-size: 1.15rem;
+      color: var(--slate);
+      margin: 0;
+      max-width: 34rem;
+    }
 
-  .entry .meta{
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 0 0 0.5rem;
-  }
+    /* ---------- Sections ---------- */
 
-  .entry p{
-    margin: 0;
-    color: var(--slate);
-  }
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--line);
+    }
 
-  /* ---------- Contact ---------- */
-  #contact{
-    padding-bottom: 3.5rem;
-  }
+    section:last-of-type {
+      border-bottom: none;
+    }
 
-  .contact-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
-  }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin: 0 0 0.9rem;
+    }
 
-  .contact-list a{
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    font-family: var(--font-body);
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 2px solid var(--ink);
-    padding-bottom: 2px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.7rem;
+      margin: 0 0 1rem;
+      color: var(--ink);
+    }
 
-  .contact-list a:hover,
-  .contact-list a:focus-visible{
-    color: var(--gold);
-    border-color: var(--gold);
-  }
+    .lede {
+      max-width: 40rem;
+    }
 
-  .contact-list .kind{
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--slate);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    border: none;
-    padding: 0;
-  }
+    /* ---------- About ---------- */
 
-  footer.site-footer{
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--slate);
-    text-align: center;
-    padding: 1.5rem 0 2.5rem;
-  }
+    #about p {
+      margin: 0 0 1rem;
+      color: var(--ink);
+    }
 
-  @media (max-width: 30rem){
-    header.site-header{ padding: 2.5rem 0 2rem; }
-    section{ padding: 2.25rem 0; }
-  }
-</style>
+    #about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Projects ---------- */
+
+    .entry-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .entry {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--ink);
+      border-radius: 4px;
+      padding: 1.25rem 1.4rem;
+    }
+
+    .entry h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 0 0.4rem;
+    }
+
+    .entry .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.5rem;
+    }
+
+    .entry p {
+      margin: 0;
+      color: var(--slate);
+    }
+
+    /* ---------- Skills ---------- */
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skills-list li {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.4rem 0.7rem;
+      border-radius: 3px;
+    }
+
+    /* ---------- Contact ---------- */
+
+    #contact {
+      padding-bottom: 3.5rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+    }
+
+    .contact-list a {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .contact-list .kind {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ---------- Footer ---------- */
+
+    footer.site-footer {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--slate);
+      text-align: center;
+      padding: 1.5rem 0 2.5rem;
+    }
+
+    /* ---------- Mobile ---------- */
+
+    @media (max-width: 30rem) {
+      header.site-header {
+        padding: 2.5rem 0 2rem;
+      }
+
+      section {
+        padding: 2.25rem 0;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="site-header">
-  <div class="wrap">
-    <span class="id-tag">Student Portfolio</span>
-    <h1 class="name">Musa Hameed</h1>
-    <p class="identity">Computer science student building thoughtful, useful software.</p>
-  </div>
-</header>
+  <!-- HEADER -->
 
-<main id="main">
-  <div class="wrap">
+  <header class="site-header">
+    <div class="wrap">
 
-    <section id="about" aria-labelledby="about-heading">
-      <p class="section-label">01 — About</p>
-      <h2 id="about-heading">About me</h2>
-      <div class="lede">
+```
+  <span class="id-tag">Student Portfolio</span>
+
+  <h1 class="name">Musa Hameed</h1>
+
+  <p class="identity">
+    Student &amp; aspiring software engineer building useful technology with curiosity and purpose.
+  </p>
+
+</div>
+```
+
+  </header>
+
+  <!-- MAIN CONTENT -->
+
+  <main id="main">
+
+```
+<div class="wrap">
+
+  <!-- ABOUT -->
+
+  <section id="about" aria-labelledby="about-heading">
+
+    <p class="section-label">01 — About</p>
+
+    <h2 id="about-heading">About me</h2>
+
+    <div class="lede">
+
+      <p>
+        I'm Musa Hameed, a student with a growing interest in computer
+        science, software engineering, artificial intelligence, and the
+        ways technology can be used to solve meaningful problems.
+      </p>
+
+      <p>
+        I enjoy learning by building. From experimenting with electronics
+        and embedded systems to designing software concepts and developing
+        ideas around fitness technology, I like turning questions into
+        practical projects. I'm particularly interested in AI and software
+        development, and I'm working toward building a strong foundation
+        in both technical skills and real-world problem solving.
+      </p>
+
+      <p>
+        Beyond technology, I care about learning, communication, creativity,
+        and personal development. My long-term goal is to become a capable
+        software engineer who can build products that are not only
+        technically strong, but genuinely useful to people.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS & ACHIEVEMENTS -->
+
+  <section id="projects" aria-labelledby="projects-heading">
+
+    <p class="section-label">02 — Projects &amp; Achievements</p>
+
+    <h2 id="projects-heading">
+      Things I've built &amp; accomplished
+    </h2>
+
+    <ul class="entry-list">
+
+      <li class="entry">
+
+        <p class="meta">Technology · Embedded Systems</p>
+
+        <h3>Jarvis-Inspired Smart Assistant</h3>
+
         <p>
-          This is placeholder text. Replace it with a short introduction — who you are,
-          what you're studying, and what you're curious about. A couple of sentences is
-          plenty: mention your field, one or two interests, and what kind of problems
-          you enjoy working on.
+          An experimental voice-controlled smart lamp project built
+          around an ESP32. The project combines electronics, embedded
+          programming, audio input and output, and physical interaction
+          to explore how voice assistants can be connected to everyday
+          devices.
         </p>
+
+      </li>
+
+
+      <li class="entry">
+
+        <p class="meta">Product · Fitness Technology</p>
+
+        <h3>Fitness Technology App</h3>
+
         <p>
-          You can also use this space to mention your goals, the tools or languages you're
-          learning, or what you're currently working toward. Keep it honest and in your
-          own voice.
+          A fitness-focused software concept designed around tracking
+          daily activity, calories, sleep, heart rate, pace, elevation,
+          and progress. I worked on structuring the application's data
+          model and planning its interface in FlutterFlow.
         </p>
-      </div>
-    </section>
 
-    <section id="projects" aria-labelledby="projects-heading">
-      <p class="section-label">02 — Projects &amp; Achievements</p>
-      <h2 id="projects-heading">Projects &amp; achievements</h2>
+      </li>
 
-      <ul class="entry-list">
-        <li class="entry">
-          <p class="meta">Project</p>
-          <h3>Project name goes here</h3>
-          <p>
-            Placeholder description. Explain what the project does, what problem it
-            solves, and which tools or technologies you used. Two or three sentences
-            is a good length — enough to give a reader a clear picture without overwhelming them.
-          </p>
-        </li>
 
-        <li class="entry">
-          <p class="meta">Achievement</p>
-          <h3>Achievement or award title</h3>
-          <p>
-            Placeholder description. Describe what you achieved, where or how it happened,
-            and why it mattered to you. Keep it specific — a competition placing, a
-            certification, or a milestone you're proud of all work well here.
-          </p>
-        </li>
-      </ul>
-    </section>
+      <li class="entry">
 
-    <section id="contact" aria-labelledby="contact-heading">
-      <p class="section-label">03 — Contact</p>
-      <h2 id="contact-heading">Get in touch</h2>
-      <p class="lede">Feel free to reach out — I'm happy to connect.</p>
+        <p class="meta">Achievement · Award</p>
 
-      <ul class="contact-list">
-        <li>
-          <a href="mailto:musa.hameed@example.com">
-            <span class="kind">Email</span> musa.hameed@example.com
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/musa-hameed" target="_blank" rel="noopener noreferrer">
-            <span class="kind">LinkedIn</span> /in/musa-hameed
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/musa-hameed" target="_blank" rel="noopener noreferrer">
-            <span class="kind">GitHub</span> /musa-hameed
-          </a>
-        </li>
-      </ul>
-    </section>
+        <h3>Duke of Edinburgh's International Award — Bronze</h3>
 
-  </div>
-</main>
+        <p>
+          Completed the Bronze level of the Duke of Edinburgh's
+          International Award, developing experience in commitment,
+          activity, service, personal development, and working toward
+          a long-term goal.
+        </p>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <p>&copy; 2026 Musa Hameed. Built with HTML &amp; CSS.</p>
-  </div>
-</footer>
+      </li>
+
+
+      <li class="entry">
+
+        <p class="meta">Entrepreneurship · Brand Building</p>
+
+        <h3>Ace Allure</h3>
+
+        <p>
+          An early sports-goods business project that introduced me to
+          entrepreneurship, branding, product development, and the
+          process of turning an idea into something people could use.
+          The experience helped shape my interest in combining sports,
+          technology, and software.
+        </p>
+
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills" aria-labelledby="skills-heading">
+
+    <p class="section-label">03 — Skills</p>
+
+    <h2 id="skills-heading">What I'm learning</h2>
+
+    <p class="lede">
+      A developing toolkit built through school, personal projects,
+      experimentation, and independent learning.
+    </p>
+
+    <ul class="skills-list" aria-label="Skills">
+
+      <li>HTML &amp; CSS</li>
+      <li>Python</li>
+      <li>JavaScript</li>
+      <li>C++</li>
+      <li>FlutterFlow</li>
+      <li>UI / UX</li>
+      <li>Embedded Systems</li>
+      <li>ESP32</li>
+      <li>Problem Solving</li>
+      <li>Product Thinking</li>
+      <li>Communication</li>
+      <li>Public Speaking</li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" aria-labelledby="contact-heading">
+
+    <p class="section-label">04 — Contact</p>
+
+    <h2 id="contact-heading">Let's connect</h2>
+
+    <p class="lede">
+      I'm always interested in learning from people, discussing
+      technology, collaborating on ideas, and exploring new projects.
+    </p>
+
+    <ul class="contact-list">
+
+      <li>
+        <a href="mailto:musa.hameed@example.com">
+          <span class="kind">Email</span>
+          musa.hameed@example.com
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.linkedin.com/in/musa-hameed"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="kind">LinkedIn</span>
+          /in/musa-hameed
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://github.com/musa-hameed"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="kind">GitHub</span>
+          /musa-hameed
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</div>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+```
+<div class="wrap">
+
+  <p>
+    &copy; 2026 Musa Hameed. Built with HTML &amp; CSS.
+  </p>
+
+</div>
+```
+
+  </footer>
 
 </body>
 </html>
