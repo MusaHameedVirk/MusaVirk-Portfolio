@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,11 +6,10 @@
 
   <title>Musa Hameed — Portfolio</title>
 
-<meta
-name="description"
-content="Portfolio of Musa Hameed, student and aspiring software engineer interested in computer science, AI, and technology."
-
->
+  <meta
+    name="description"
+    content="Portfolio of Musa Hameed — student, aspiring software engineer, builder, filmmaker, and creative learner."
+  >
 
   <style>
     /* ---------- Design tokens ---------- */
@@ -35,12 +33,28 @@ content="Portfolio of Musa Hameed, student and aspiring software engineer intere
 
     /* ---------- Base ---------- */
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
     }
 
     body {
@@ -141,7 +155,7 @@ content="Portfolio of Musa Hameed, student and aspiring software engineer intere
       font-size: 1.15rem;
       color: var(--slate);
       margin: 0;
-      max-width: 34rem;
+      max-width: 36rem;
     }
 
     /* ---------- Sections ---------- */
@@ -226,7 +240,7 @@ content="Portfolio of Musa Hameed, student and aspiring software engineer intere
       color: var(--slate);
     }
 
-    /* ---------- Skills ---------- */
+    /* ---------- Skills / Areas ---------- */
 
     .skills-list {
       display: flex;
@@ -309,257 +323,444 @@ content="Portfolio of Musa Hameed, student and aspiring software engineer intere
       }
     }
   </style>
-
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- HEADER -->
+
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="site-header">
     <div class="wrap">
 
-```
-  <span class="id-tag">Student Portfolio</span>
+      <span class="id-tag">Student · Builder · Creator</span>
 
-  <h1 class="name">Musa Hameed</h1>
+      <h1 class="name">Musa Hameed</h1>
 
-  <p class="identity">
-    Student &amp; aspiring software engineer building useful technology with curiosity and purpose.
-  </p>
-
-</div>
-```
-
-  </header>
-
-  <!-- MAIN CONTENT -->
-
-  <main id="main">
-
-```
-<div class="wrap">
-
-  <!-- ABOUT -->
-
-  <section id="about" aria-labelledby="about-heading">
-
-    <p class="section-label">01 — About</p>
-
-    <h2 id="about-heading">About me</h2>
-
-    <div class="lede">
-
-      <p>
-        I'm Musa Hameed, a student with a growing interest in computer
-        science, software engineering, artificial intelligence, and the
-        ways technology can be used to solve meaningful problems.
-      </p>
-
-      <p>
-        I enjoy learning by building. From experimenting with electronics
-        and embedded systems to designing software concepts and developing
-        ideas around fitness technology, I like turning questions into
-        practical projects. I'm particularly interested in AI and software
-        development, and I'm working toward building a strong foundation
-        in both technical skills and real-world problem solving.
-      </p>
-
-      <p>
-        Beyond technology, I care about learning, communication, creativity,
-        and personal development. My long-term goal is to become a capable
-        software engineer who can build products that are not only
-        technically strong, but genuinely useful to people.
+      <p class="identity">
+        Student exploring software engineering, technology, filmmaking, and the craft of building things from ideas.
       </p>
 
     </div>
+  </header>
 
-  </section>
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main id="main">
+
+    <div class="wrap">
 
 
-  <!-- PROJECTS & ACHIEVEMENTS -->
+      <!-- =========================
+           ABOUT
+      ========================== -->
 
-  <section id="projects" aria-labelledby="projects-heading">
+      <section id="about" aria-labelledby="about-heading">
 
-    <p class="section-label">02 — Projects &amp; Achievements</p>
+        <p class="section-label">01 — About</p>
 
-    <h2 id="projects-heading">
-      Things I've built &amp; accomplished
-    </h2>
+        <h2 id="about-heading">About me</h2>
 
-    <ul class="entry-list">
+        <div class="lede">
 
-      <li class="entry">
+          <p>
+            I'm Musa Hameed, a student interested in computer science,
+            software engineering, artificial intelligence, technology,
+            and creative work. I enjoy learning across different fields
+            and, most importantly, turning what I learn into something
+            tangible.
+          </p>
 
-        <p class="meta">Technology · Embedded Systems</p>
+          <p>
+            A lot of my learning happens through projects. I experiment
+            with software, electronics, embedded systems, product ideas,
+            filmmaking, and digital content. Some projects become working
+            builds; others are experiments that help me understand what
+            is possible.
+          </p>
 
-        <h3>Jarvis-Inspired Smart Assistant</h3>
+          <p>
+            I'm currently working toward a future in software engineering
+            with a particular interest in AI. At the same time, I'm
+            developing the creative and communication skills that I believe
+            make technology more useful: storytelling, filmmaking,
+            public speaking, and understanding people.
+          </p>
 
-        <p>
-          An experimental voice-controlled smart lamp project built
-          around an ESP32. The project combines electronics, embedded
-          programming, audio input and output, and physical interaction
-          to explore how voice assistants can be connected to everyday
-          devices.
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           CURRENT WORK
+      ========================== -->
+
+      <section id="projects" aria-labelledby="projects-heading">
+
+        <p class="section-label">02 — Work &amp; Projects</p>
+
+        <h2 id="projects-heading">
+          Things I'm building &amp; exploring
+        </h2>
+
+        <ul class="entry-list">
+
+
+          <!-- FITNESS APP -->
+
+          <li class="entry">
+
+            <p class="meta">
+              In Progress · Software · Fitness Technology
+            </p>
+
+            <h3>Fitness Technology Platform</h3>
+
+            <p>
+              I'm developing the concept and data structure for a fitness
+              application focused on turning activity and health-related
+              measurements into useful progress information. The planned
+              experience includes activity sessions, calories, sleep,
+              heart rate, pace, elevation, daily goals, and progress
+              trends. I'm using FlutterFlow to explore the application's
+              interface and database structure.
+            </p>
+
+          </li>
+
+
+          <!-- ESP32 -->
+
+          <li class="entry">
+
+            <p class="meta">
+              In Progress · Embedded Systems · Electronics
+            </p>
+
+            <h3>Voice-Controlled Smart Lamp</h3>
+
+            <p>
+              An experimental smart-lamp project built around an ESP32.
+              I'm exploring how voice input, audio output, electronics,
+              sensors, and physical devices can work together to create
+              a small local assistant. The project is an ongoing
+              exploration of embedded systems and the connection between
+              software and hardware.
+            </p>
+
+          </li>
+
+
+          <!-- TELEGRAPH -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Electronics · Morse Code · Personal Project
+            </p>
+
+            <h3>Telegraph Projects</h3>
+
+            <p>
+              A series of experiments inspired by the original telegraph
+              and Morse communication. These projects combine physical
+              components with the logic of Morse code and are part of my
+              interest in building unusual, hands-on technology rather
+              than learning software only through a screen.
+            </p>
+
+          </li>
+
+
+          <!-- ARC REACTOR -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Electronics · 3D Printing · Experimentation
+            </p>
+
+            <h3>Interactive Electronics Builds</h3>
+
+            <p>
+              I've also experimented with physical technology projects,
+              including a 3D-printed arc-reactor-inspired lamp and
+              lighting concepts. These builds give me a practical way
+              to learn about LEDs, electronics, physical design, and
+              integrating hardware into an object.
+            </p>
+
+          </li>
+
+
+          <!-- FILMMAKING -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Creative Work · Filmmaking · Storytelling
+            </p>
+
+            <h3>Cinematic Filmmaking &amp; Storytelling</h3>
+
+            <p>
+              I'm interested in filmmaking as a form of storytelling,
+              particularly cinematic historical and cultural content.
+              I enjoy developing concepts, visual atmosphere, practical
+              props, camera work, editing, and narrative structure rather
+              than treating video simply as a way to deliver information.
+            </p>
+
+          </li>
+
+
+          <!-- CONTENT CREATION -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Ongoing · YouTube · Digital Media
+            </p>
+
+            <h3>History &amp; Documentary Content</h3>
+
+            <p>
+              I'm building ideas for a history-focused content channel
+              that combines documentary-style research with cinematic
+              presentation. The goal is to make subjects feel like stories
+              rather than conventional lectures, using visuals, props,
+              atmosphere, and editing to create a stronger viewing
+              experience.
+            </p>
+
+          </li>
+
+
+          <!-- ACE ALLURE -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Entrepreneurship · Sports · Product Ideas
+            </p>
+
+            <h3>Ace Allure</h3>
+
+            <p>
+              Ace Allure was one of my early ventures into sports goods
+              and entrepreneurship. The experience introduced me to
+              product thinking, branding, selling, and the process of
+              taking an idea beyond the planning stage. It also influenced
+              my later interest in combining sports products with
+              technology and software.
+            </p>
+
+          </li>
+
+
+          <!-- EDUCATION -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Initiative · SDG 4 · Education
+            </p>
+
+            <h3>Education &amp; Technology</h3>
+
+            <p>
+              I'm interested in how technology can improve access to
+              learning and make education more effective. My work around
+              Sustainable Development Goal 4 — Quality Education —
+              reflects an interest in using technology not just as an
+              engineering tool, but as a way to solve real educational
+              problems.
+            </p>
+
+          </li>
+
+
+          <!-- DUKE OF EDINBURGH -->
+
+          <li class="entry">
+
+            <p class="meta">
+              Achievement · Duke of Edinburgh's International Award
+            </p>
+
+            <h3>Bronze Award</h3>
+
+            <p>
+              Completed the Bronze level of the Duke of Edinburgh's
+              International Award, an experience built around commitment,
+              personal development, activity, service, and following
+              through on goals over time.
+            </p>
+
+          </li>
+
+
+        </ul>
+
+      </section>
+
+
+      <!-- =========================
+           INTERESTS
+      ========================== -->
+
+      <section id="interests" aria-labelledby="interests-heading">
+
+        <p class="section-label">03 — Interests</p>
+
+        <h2 id="interests-heading">What keeps me curious</h2>
+
+        <div class="lede">
+
+          <p>
+            My interests sit at the intersection of technology,
+            creativity, communication, and personal development.
+          </p>
+
+        </div>
+
+        <ul class="skills-list" aria-label="Areas of interest">
+
+          <li>Artificial Intelligence</li>
+          <li>Software Engineering</li>
+          <li>Computer Science</li>
+          <li>Embedded Systems</li>
+          <li>Electronics</li>
+          <li>Fitness Technology</li>
+          <li>Filmmaking</li>
+          <li>Documentary Storytelling</li>
+          <li>History</li>
+          <li>Content Creation</li>
+          <li>Entrepreneurship</li>
+          <li>Education Technology</li>
+          <li>Public Speaking</li>
+          <li>Communication</li>
+          <li>Product Design</li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- =========================
+           SKILLS
+      ========================== -->
+
+      <section id="skills" aria-labelledby="skills-heading">
+
+        <p class="section-label">04 — Skills &amp; Tools</p>
+
+        <h2 id="skills-heading">What I'm developing</h2>
+
+        <p class="lede">
+          A practical toolkit I'm developing through school,
+          experimentation, projects, and independent learning.
         </p>
 
-      </li>
+        <ul class="skills-list" aria-label="Skills and tools">
+
+          <li>HTML &amp; CSS</li>
+          <li>FlutterFlow</li>
+          <li>UI / UX</li>
+          <li>ESP32</li>
+          <li>Embedded Systems</li>
+          <li>Morse Code</li>
+          <li>Electronics</li>
+          <li>3D Printing</li>
+          <li>Video Editing</li>
+          <li>CapCut</li>
+          <li>Storytelling</li>
+          <li>Research</li>
+          <li>Communication</li>
+          <li>Public Speaking</li>
+          <li>Product Thinking</li>
+
+        </ul>
+
+      </section>
 
 
-      <li class="entry">
+      <!-- =========================
+           CONTACT
+      ========================== -->
 
-        <p class="meta">Product · Fitness Technology</p>
+      <section id="contact" aria-labelledby="contact-heading">
 
-        <h3>Fitness Technology App</h3>
+        <p class="section-label">05 — Contact</p>
 
-        <p>
-          A fitness-focused software concept designed around tracking
-          daily activity, calories, sleep, heart rate, pace, elevation,
-          and progress. I worked on structuring the application's data
-          model and planning its interface in FlutterFlow.
+        <h2 id="contact-heading">Let's connect</h2>
+
+        <p class="lede">
+          I'm always interested in learning, building, collaborating,
+          and meeting people who are working on interesting ideas.
         </p>
 
-      </li>
+        <ul class="contact-list">
 
+          <li>
+            <a href="mailto:musa.hameed@example.com">
+              <span class="kind">Email</span>
+              musa.hameed@example.com
+            </a>
+          </li>
 
-      <li class="entry">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/musa-hameed"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="kind">LinkedIn</span>
+              /in/musa-hameed
+            </a>
+          </li>
 
-        <p class="meta">Achievement · Award</p>
+          <li>
+            <a
+              href="https://github.com/musa-hameed"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="kind">GitHub</span>
+              /musa-hameed
+            </a>
+          </li>
 
-        <h3>Duke of Edinburgh's International Award — Bronze</h3>
+        </ul>
 
-        <p>
-          Completed the Bronze level of the Duke of Edinburgh's
-          International Award, developing experience in commitment,
-          activity, service, personal development, and working toward
-          a long-term goal.
-        </p>
+      </section>
 
-      </li>
-
-
-      <li class="entry">
-
-        <p class="meta">Entrepreneurship · Brand Building</p>
-
-        <h3>Ace Allure</h3>
-
-        <p>
-          An early sports-goods business project that introduced me to
-          entrepreneurship, branding, product development, and the
-          process of turning an idea into something people could use.
-          The experience helped shape my interest in combining sports,
-          technology, and software.
-        </p>
-
-      </li>
-
-    </ul>
-
-  </section>
-
-
-  <!-- SKILLS -->
-
-  <section id="skills" aria-labelledby="skills-heading">
-
-    <p class="section-label">03 — Skills</p>
-
-    <h2 id="skills-heading">What I'm learning</h2>
-
-    <p class="lede">
-      A developing toolkit built through school, personal projects,
-      experimentation, and independent learning.
-    </p>
-
-    <ul class="skills-list" aria-label="Skills">
-
-      <li>HTML &amp; CSS</li>
-      <li>Python</li>
-      <li>JavaScript</li>
-      <li>C++</li>
-      <li>FlutterFlow</li>
-      <li>UI / UX</li>
-      <li>Embedded Systems</li>
-      <li>ESP32</li>
-      <li>Problem Solving</li>
-      <li>Product Thinking</li>
-      <li>Communication</li>
-      <li>Public Speaking</li>
-
-    </ul>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section id="contact" aria-labelledby="contact-heading">
-
-    <p class="section-label">04 — Contact</p>
-
-    <h2 id="contact-heading">Let's connect</h2>
-
-    <p class="lede">
-      I'm always interested in learning from people, discussing
-      technology, collaborating on ideas, and exploring new projects.
-    </p>
-
-    <ul class="contact-list">
-
-      <li>
-        <a href="mailto:musa.hameed@example.com">
-          <span class="kind">Email</span>
-          musa.hameed@example.com
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://www.linkedin.com/in/musa-hameed"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="kind">LinkedIn</span>
-          /in/musa-hameed
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://github.com/musa-hameed"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="kind">GitHub</span>
-          /musa-hameed
-        </a>
-      </li>
-
-    </ul>
-
-  </section>
-
-</div>
-```
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer class="site-footer">
 
-```
-<div class="wrap">
+    <div class="wrap">
 
-  <p>
-    &copy; 2026 Musa Hameed. Built with HTML &amp; CSS.
-  </p>
+      <p>
+        &copy; 2026 Musa Hameed. Built with HTML &amp; CSS.
+      </p>
 
-</div>
-```
+    </div>
 
   </footer>
 
